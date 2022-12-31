@@ -1,10 +1,24 @@
 {% extends "mytask/layout.html" %}
 
 {% block body %}
-    <ul>
+    <table>
+        <tr>
+            <th>Tasks</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{task}}</td> 
+                <td><a href="/mytask/add">Update</a></td>
+                <td><a href="#">Delete</a></td> 
+            </tr>
+        {% endfor %}
+
+    </table>
+    <!-- <ul>
         {% for task in tasks %}
             <li>{{task}}</li>
+            <a href="#">Update</a>
         {% endfor %}    
-    </ul>
+    </ul> -->
     <button class="button"><a href="{% url 'add' %}">Add Task</a></button>
 {% endblock %}
