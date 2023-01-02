@@ -8,8 +8,8 @@
         {% for task in tasks %}
             <tr>
                 <td>{{task}}</td> 
-                <td><a href="/mytask/add">Update</a></td>
-                <td><a href="#">Delete</a></td> 
+                <td><a href="{% url 'update' task.id %}">Update</a></td>
+                <td><a href="{% url 'delete' task.id %}">Delete</a></td> 
             </tr>
         {% endfor %}
 
