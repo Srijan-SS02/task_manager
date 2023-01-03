@@ -7,29 +7,50 @@
     <title>mytask</title>
     <style>
         .button{
-            border: none;
-            background-color: green;
-            color: white;
+            border: black;
+            background-color: lightblue;
+            color: black;
+            padding:8px;
+            font-size:20px;
+            margin-top:20px;
+            
         }
 
         .button:hover{
-            background-color: Blue;
+            background-color: skyBlue;
             color: black;
         }
 
-        .T1{
-            display: flex;
+        .main{
+            margin: auto;
+            margin-top:50px;
+            width: 50%;
+            border: 3px solid black;
+            padding: 10px;
+            text-align: center;
+            {% comment %} background-color:; {% endcomment %}
         }
+
+        .box{
+            margin: auto;
+            width: 50%;
+            border: 3px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
-    <div>
-        <h1 class="zz">Task Manager</h1>
+    <div class="main">
+        <h1 >Task Manager</h1>
+        <div>
+            {% block body %}
+            
+            {% endblock %}
+        </div>
         
     </div>
-    {% block body %}
-    
-    {% endblock %}
     
 </body>
 </html>

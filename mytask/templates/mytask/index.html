@@ -1,24 +1,22 @@
 {% extends "mytask/layout.html" %}
 
 {% block body %}
-    <table>
-        <tr>
-            <th>Tasks</th>
-        </tr>
-        {% for task in tasks %}
+    <div>
+        <table class="box">
             <tr>
-                <td>{{task}}</td> 
-                <td><a href="{% url 'update' task.id %}">Update</a></td>
-                <td><a href="{% url 'delete' task.id %}">Delete</a></td> 
+                <th>Tasks</th>
             </tr>
-        {% endfor %}
+            {% for task in tasks %}
+                <tr>
+                    <td>{{task}}</td> 
+                    <td><a href="{% url 'update' task.id %}">Update</a></td>
+                    <td><a href="{% url 'delete' task.id %}">Delete</a></td> 
+                </tr>
+            {% endfor %}
+        
+        </table>
 
-    </table>
-    <!-- <ul>
-        {% for task in tasks %}
-            <li>{{task}}</li>
-            <a href="#">Update</a>
-        {% endfor %}    
-    </ul> -->
+    </div>
+
     <button class="button"><a href="{% url 'add' %}">Add Task</a></button>
 {% endblock %}
